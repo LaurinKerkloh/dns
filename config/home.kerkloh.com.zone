@@ -1,0 +1,26 @@
+$TTL 2d    ; default TTL for zone
+$ORIGIN home.kerkloh.com.
+
+; Start of Authority RR defining the key characteristics of the zone (domain)
+
+@	IN	SOA	ns1.home.kerkloh.com. hostmaster.home.kerkloh.com. (
+				2003080800 ; serial number
+                                12h        ; refresh
+                                15m        ; update retry
+                                3w         ; expiry
+                                2h         ; minimum
+                                )
+
+; name server RR for the domain
+
+	IN	NS	ns1.home.kerkloh.com.
+
+; domain hosts includes NS and MX records defined above
+; plus any others required
+; for instance a user query for the A RR of router.home.kerkloh.com will
+; return the IPv4 address 192.168.178.1 from this zone file
+ns1		IN	A	192.168.178.30
+router		IN      A       192.168.178.1
+assistant	IN	A	192.168.178.30
+pi		IN	A	192.168.178.30
+z2m		IN	A	192.168.178.30
